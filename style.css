@@ -1,19 +1,57 @@
+/* Light/Dark Mode Theme Variables */
+:root {
+    --background-color: white;
+    --text-color: black;
+    --link-color: SeaGreen;
+    --paragraph-color: gray;
+}
 
-img{
+/* Apply variables to your existing elements */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+img {
     height: 150px;
 }
-.description{
+
+.description {
     font-size: 20px;
 }
-#cook-time{
+
+#cook-time {
     font-weight: bold;
 }
-p{
-    color: gray;
+
+p {
+    color: var(--paragraph-color);
 }
-.external-link{
-    color: SeaGreen;
+
+.external-link {
+    color: var(--link-color);
 }
-h1, h2, p, li{
+
+h1, h2, p, li {
     font-family: Helvetica;
+}
+
+/* Dark Mode */
+.dark-mode {
+    --background-color: black;
+    --text-color: white;
+    --link-color: lightgreen;
+    --paragraph-color: lightgray;
+}
+
+/* Style for the toggle button */
+button {
+    padding: 10px;
+    margin: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #ccc;
+    color: #333;
+    font-size: 16px;
 }
