@@ -1,4 +1,4 @@
-/* Light/Dark Mode Theme Variables */
+/* Light/Dark Mode Theme*/
 :root {
     --background-color: white;
     --text-color: black;
@@ -6,7 +6,7 @@
     --paragraph-color: gray;
 }
 
-/* Apply variables to your existing elements */
+/* variables on existing elements */
 body {
     background-color: var(--background-color);
     color: var(--text-color);
