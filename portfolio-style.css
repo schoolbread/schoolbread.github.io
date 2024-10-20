@@ -46,6 +46,22 @@ a:hover {
     color: var(--link-hover-color);
 }
 
+/* Flexbox for the About Me section */
+.profile {
+    display: flex;
+    align-items: flex-start; /* Align items at the top */
+    gap: 20px; /* Space between image and the text */
+}
+
+.profile img {
+    max-width: 150px;
+    border-radius: 50%;
+}
+
+.info {
+    flex: 1; /* The info section will take the remaining space */
+}
+
 /* Dark mode styles */
 body.dark-mode {
     --bg-color: #1c1c1c;
@@ -78,6 +94,12 @@ body.dark-mode {
         width: 100%;
         padding: 10px;
         font-size: 1.1em;
+    }
+
+    /* Adjust layout for smaller screens */
+    .profile {
+        flex-direction: column; /* Stack image on top for smaller screens */
+        align-items: center; /* Center align on smaller devices */
     }
 }
 
