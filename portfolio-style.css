@@ -10,10 +10,14 @@ body {
     font-family: Arial, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
+    margin: 0;
+    padding: 0 20px;
 }
 
 h1 {
     color: var(--header-color);
+    font-size: 1.8em;
+    margin-bottom: 10px;
 }
 
 ul {
@@ -28,6 +32,8 @@ ul li {
 img {
     max-width: 150px;
     border-radius: 50%;
+    display: block;
+    margin: 10px auto;
 }
 
 a {
@@ -47,4 +53,48 @@ body.dark-mode {
     --header-color: #f39c12;
     --link-color: #3498db;
     --link-hover-color: #2980b9;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    body {
+        padding: 10px;
+    }
+
+    img {
+        max-width: 100px;
+    }
+
+    ul li {
+        font-size: 1em;
+        margin: 10px 0;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        font-size: 1.1em;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.2em;
+    }
+
+    img {
+        max-width: 80px;
+    }
+
+    ul li {
+        font-size: 0.9em;
+    }
+
+    button {
+        font-size: 1em;
+    }
 }
