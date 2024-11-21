@@ -13,9 +13,10 @@
             --card-background: #1a1a1a; /* Dark grey for cards */
             --border-color: #333333; /* Subtle border color */
             --hover-color: #ffcc66; /* Hover effect for links */
+            --primary-font: 'Poppins', sans-serif;
         }
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: var(--primary-font);
             margin: 0;
             padding: 0;
             background: var(--background-color);
@@ -23,17 +24,47 @@
             line-height: 1.6;
         }
         header {
-            text-align: center;
-            padding: 40px 0;
             background: var(--background-color);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            padding: 10px 0;
         }
-        header h1 {
-            font-size: 2.4rem;
+        header nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+        header nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 10px 20px;
+            transition: color 0.3s ease, background 0.3s ease;
+        }
+        header nav a:hover {
+            color: var(--hover-color);
+            background: rgba(255, 153, 0, 0.1);
+            border-radius: 5px;
+        }
+        .hero {
+            margin-top: 80px;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            border-bottom: 2px solid var(--border-color);
+        }
+        .hero h1 {
+            font-size: 3rem;
             margin: 10px 0;
             color: var(--text-color);
         }
-        header p {
+        .hero p {
             font-size: 1.2rem;
             color: var(--text-color);
         }
@@ -45,20 +76,6 @@
             display: block;
             border: 4px solid var(--link-color);
             box-shadow: 0 4px 8px rgba(255, 153, 0, 0.5);
-        }
-        .links {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .links a {
-            margin: 0 15px;
-            color: var(--link-color);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-        .links a:hover {
-            color: var(--hover-color);
         }
         section {
             padding: 40px 20px;
@@ -73,6 +90,7 @@
             text-align: center;
             margin-bottom: 30px;
             color: var(--link-color);
+            text-transform: uppercase;
         }
         .projects, .experience {
             display: flex;
@@ -90,13 +108,46 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+        .project-card img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+        .project-card img:hover {
+            transform: scale(1.05);
+        }
+        .project-card a {
+            text-decoration: none;
+            color: var(--text-color);
+        }
+        .project-card a:hover {
+            color: var(--hover-color);
+        }
+        .project-card:hover, .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(255, 153, 0, 0.5);
+        }
         footer {
             text-align: center;
-            padding: 20px 0;
+            padding: 30px 0;
             font-size: 0.9rem;
             color: var(--text-color);
             background-color: var(--background-color);
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.5);
+            border-top: 2px solid var(--border-color);
+            margin-top: 30px;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        footer .social-links a {
+            margin: 0 10px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        footer .social-links a:hover {
+            color: var(--hover-color);
         }
         #advice-section {
             text-align: center;
@@ -108,10 +159,37 @@
             font-style: italic;
             color: var(--hover-color);
         }
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 768px) {
+            header nav a {
+                font-size: 0.9rem;
+                padding: 8px 15px;
+            }
+            .project-card, .experience-card {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
+        <nav>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#advice-section">Advice</a>
+        </nav>
+    </header>
+    <section class="hero">
         <img src="438029977_2343815649141058_8019647529734451240_n.jpg" alt="Profile Picture" class="profile-img">
         <h1>Hey there! 👋 I'm John Michael Jomoc</h1>
         <p>2nd-year BSIT student passionate about technology and design.</p>
@@ -119,8 +197,8 @@
             <a href="https://www.facebook.com/profile.php?id=100005379375034&mibextid=ZbWKwL" target="_blank">Facebook</a>
             <a href="https://github.com/schoolbread" target="_blank">GitHub</a>
         </div>
-    </header>
-    <section>
+    </section>
+    <section id="projects">
         <h2>School Projects</h2>
         <div class="projects">
             <div class="project-card">
@@ -146,7 +224,7 @@
             </div>
         </div>
     </section>
-    <section>
+    <section id="experience">
         <h2>Experience</h2>
         <div class="experience">
             <div class="experience-card">
@@ -156,7 +234,6 @@
             </div>
         </div>
     </section>
-    <!-- Advice Section -->
     <section id="advice-section">
         <h2>Need Some Advice?</h2>
         <button onclick="getAdvice()">Get Random Advice</button>
@@ -164,6 +241,10 @@
     </section>
     <footer>
         <p>© 2024 John Michael Jomoc. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            <a href="https://www.github.com" target="_blank">GitHub</a>
+        </div>
     </footer>
     <script>
         async function getAdvice() {
