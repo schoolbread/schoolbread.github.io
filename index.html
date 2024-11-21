@@ -3,63 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portfolio</title>
-    <link rel="stylesheet" href="portfolio-style.css">
+    <title>John Michael Jomoc | Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <style>
+        :root {
+            --background-color: #000000;
+            --text-color: #ffa31a; /* Orange */
+            --link-color: #ff9900; /* Darker orange */
+            --card-background: #1a1a1a; /* Dark grey for cards */
+            --border-color: #333333; /* Subtle border color */
+            --hover-color: #ffcc66; /* Hover effect for links */
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: var(--background-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        header h1 {
+            font-size: 2.4rem;
+            margin: 10px 0;
+            color: var(--text-color);
+        }
+        header p {
+            font-size: 1.2rem;
+            color: var(--text-color);
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 20px auto;
+            display: block;
+            border: 4px solid var(--link-color);
+            box-shadow: 0 4px 8px rgba(255, 153, 0, 0.5);
+        }
+        .links {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .links a {
+            margin: 0 15px;
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .links a:hover {
+            color: var(--hover-color);
+        }
+        section {
+            padding: 40px 20px;
+            background: var(--card-background);
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 900px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        section h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--link-color);
+        }
+        .projects, .experience {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .project-card, .experience-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+            background: var(--card-background);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.5);
+        }
+        #advice-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #advice {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--hover-color);
+        }
+    </style>
 </head>
 <body>
-    <button id="dark-mode-toggle">Toggle Dark Mode</button>
-
-    <section class="about-me">
-        <div class="profile">
-            <img src="438029977_2343815649141058_8019647529734451240_n.jpg" alt="Profile Picture">
-            <div class="info">
-                <h1>About Me:</h1>
-                <ul>
-                    <li>Name: John Michael Jomoc</li>
-                    <li>Age: 23 years old</li>
-                    <li>Course: Bachelor of Science in Information Technology (BSIT)</li>
-                    <li>2nd year</li>
-                    <li>School: University of Imaculate Conception</li>
-                    <li>I aspire to have a plethora of skills at my disposal</li>
-                </ul>
+    <header>
+        <img src="438029977_2343815649141058_8019647529734451240_n.jpg" alt="Profile Picture" class="profile-img">
+        <h1>Hey there! 👋 I'm John Michael Jomoc</h1>
+        <p>2nd-year BSIT student passionate about technology and design.</p>
+        <div class="links">
+            <a href="https://www.facebook.com/profile.php?id=100005379375034&mibextid=ZbWKwL" target="_blank">Facebook</a>
+            <a href="https://github.com/schoolbread" target="_blank">GitHub</a>
+        </div>
+    </header>
+    <section>
+        <h2>School Projects</h2>
+        <div class="projects">
+            <div class="project-card">
+                <a href="fasyon.html">
+                    <img src="https://raw.githubusercontent.com/cbatuic/fashion-blog/main/profile.jpg" alt="Fashion Blog Project">
+                    <h3>Fashion Blog</h3>
+                    <p>Everyday with Isa.</p>
+                </a>
+            </div>
+            <div class="project-card">
+                <a href="olivia.html">
+                    <img src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-2/travel.jpeg" alt="Woodruff Portfolio Project">
+                    <h3>Woodruff Portfolio</h3>
+                    <p>I am a developer specializing in HTML and CSS. I like to run, bike, and make coffee using an Aeropress.</p>
+                </a>
+            </div>
+            <div class="project-card">
+                <a href="recipe.html">
+                    <img src="salad.jpg" alt="Healthy Recipes Project">
+                    <h3>Healthy Recipes</h3>
+                    <p>Quinoa and Kale Salad Recipe.</p>
+                </a>
             </div>
         </div>
     </section>
-
-    <section class="favorites">
-        <h1>Favorites:</h1>
-        <ul>
-            <li>Coffee</li>
-            <li>Bread</li>
-            <li>Gaming</li>
-        </ul>
+    <section>
+        <h2>Experience</h2>
+        <div class="experience">
+            <div class="experience-card">
+                <h3>Multiple NC II Holder</h3>
+                <p>2020 - Present</p>
+                <p>Worked on various odd jobs for small businesses.</p>
+            </div>
+        </div>
     </section>
-
-    <section class="projects">
-        <h1>School Projects:</h1>
-        <ul>
-            <li>One of the projects we made was a barangay information system</li>
-        </ul>
+    <!-- Advice Section -->
+    <section id="advice-section">
+        <h2>Need Some Advice?</h2>
+        <button onclick="getAdvice()">Get Random Advice</button>
+        <div id="advice"></div>
     </section>
+    <footer>
+        <p>© 2024 John Michael Jomoc. All Rights Reserved.</p>
+    </footer>
+    <script>
+        async function getAdvice() {
+            const adviceElement = document.getElementById('advice');
+            const url = "https://api.adviceslip.com/advice";
 
-    <section class="skills">
-        <h1>Talents/Skills:</h1>
-        <ul>
-            <li>Listens well</li>
-            <li>Haggling prices at thrift stores</li>
-        </ul>
-    </section>
-
-    <section class="external-links">
-        <h1>External links:</h1>
-        <ul>
-            <li> <a href="recipe.html" target="_blank">Link to healthy recipe Blog</a> </li>
-            <li> <a href="https://github.com/schoolbread" target="_blank">GitHub account</a></li>
-            <li> <a href="fasyon.html" target="_blank">Link to Fashion Blog</a> </li>
-            <li> <a href="olivia.html" target="_blank">Olivia Woodruff Portfolio</a> </li>
-        </ul>
-    </section>
-
-    <script src="dark-mode.js"></script>
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                adviceElement.textContent = `“${data.slip.advice}”`;
+            } catch (error) {
+                adviceElement.textContent = "An error occurred while fetching advice. Please try again.";
+            }
+        }
+    </script>
 </body>
 </html>
